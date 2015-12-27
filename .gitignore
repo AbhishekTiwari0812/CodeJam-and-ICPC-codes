@@ -1,3 +1,5 @@
 *.exe
 *.txt
 *.o
+input.txt
+output.txt
