@@ -30,22 +30,35 @@ typedef set<string> ss;
 typedef set<ll> sll;
 typedef set<ld> sld;
 typedef pair<int,int> ii;
-
+#define MOD (int)(1e9+7)
 ifstream in;
 ofstream out;
+ll dp[103][103];
 
+ll fx( ll n,ll m ){
+	f(i,0,n+1)
+		dp[i][0] = 0;
+	f(j,0,m+1)
+		dp[0][j] = 0;
+	dp[0][0]=1;
+	f(i,1,n+1)
+		f(j,1,m+1)
+			dp[i][j] = ( j * ( dp[i-1][j] + dp[i-1][j-1] ) ) % MOD;
+	return dp[n][m];
+}
 
 int main(){
 	in.open("in.txt");
 	out.open("out.txt");
 	int test;
 	in>>test;
+	ll m,n;
 	f(i0,0,test){
 		out<<"Case #"<<i0+1<<": ";
-
+		in>>m>>n;
+		out<<(fx(n,m));
 		out<<'\n';
 	}
-
 	in.close();
 	out.close();
 	return 0;
