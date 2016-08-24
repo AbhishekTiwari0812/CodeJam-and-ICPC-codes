@@ -136,7 +136,7 @@ int main(){
 		int ans;
 		f(i,0,q){
 			in>>x;
-			if(x > max){
+			if(x > max || x < min){
 				out<<0<<' ';
 				continue;
 			}
